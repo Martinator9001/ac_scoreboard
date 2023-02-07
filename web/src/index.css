@@ -1,19 +1,15 @@
-body {
-  background: none !important;
-  overflow: hidden !important;
-  user-select: none;
-  margin: 0;
-}
-
-:root {
+html {
   color-scheme: normal !important;
 }
 
-::-webkit-scrollbar {
-  width: 4px;
+body {
+  margin: 0;
+  height: 100vh;
+  user-select: none;
+  background: none !important;
+  overflow: hidden;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--chakra-colors-gray-400);
-  border-radius: 50vh;
+#root {
+  height: 100%;
 }

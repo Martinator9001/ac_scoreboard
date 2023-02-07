@@ -1,4 +1,4 @@
-import { Stack, Text } from "@chakra-ui/react";
+import { Stack, Text } from '@chakra-ui/react';
 
 interface Props {
   left: string;
@@ -6,12 +6,12 @@ interface Props {
 }
 
 const styledText = {
-  fontWeight: "bold",
-  fontSize: "xs", // sm
-  color: "gray.400",
+  fontWeight: 'bold',
+  fontSize: 'xs', // sm
+  color: 'gray.400',
   lineHeight: 4,
-  textTransform: "uppercase",
-  letterSpacing: "wider",
+  textTransform: 'uppercase',
+  letterSpacing: 'wider',
 };
 
 const SectionHeader: React.FC<Props> = (props: Props) => {

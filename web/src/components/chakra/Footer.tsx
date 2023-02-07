@@ -1,14 +1,7 @@
-import { useContext } from "react";
-import { LocaleContext } from "./Scoreboard";
-import {
-  Text,
-  Tag,
-  TagLeftIcon,
-  HStack,
-  Tooltip,
-  useClipboard,
-} from "@chakra-ui/react";
-import { FaUserAlt, FaUserFriends } from "react-icons/fa";
+import { useContext } from 'react';
+import { LocaleContext } from './Scoreboard';
+import { Text, Tag, TagLeftIcon, HStack, Tooltip, useClipboard } from '@chakra-ui/react';
+import { FaUserAlt, FaUserFriends } from 'react-icons/fa';
 
 interface Props {
   playerCount: number;
@@ -22,7 +15,7 @@ const Footer: React.FC<Props> = (props: Props) => {
 
   return (
     <HStack>
-      <Tooltip closeOnClick={false} label={locales["ui_player_count"]}>
+      <Tooltip closeOnClick={false} label={locales['ui_player_count']}>
         <Tag>
           <TagLeftIcon as={FaUserFriends} boxSize={4} />
           <Text>
@@ -30,10 +23,7 @@ const Footer: React.FC<Props> = (props: Props) => {
           </Text>
         </Tag>
       </Tooltip>
-      <Tooltip
-        closeOnClick={false}
-        label={hasCopied ? locales["ui_copied"] : locales["ui_your_id"]}
-      >
+      <Tooltip closeOnClick={false} label={hasCopied ? locales['ui_copied'] : locales['ui_your_id']}>
         <Tag onClick={onCopy} cursor="pointer">
           <TagLeftIcon as={FaUserAlt} boxSize={3} />
           <Text>{props.serverId}</Text>
