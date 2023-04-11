@@ -11,7 +11,7 @@ const Scoreboard: React.FC = () => {
       opened={visible}
       onClose={() => setVisible(false)}
       withCloseButton={false}
-      size="md"
+      size="xs"
       position="right"
       padding="sm"
       title={<Title order={3}>Server Name</Title>}
