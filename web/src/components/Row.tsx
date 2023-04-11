@@ -2,7 +2,7 @@ import { Group, Text, createStyles } from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({
   badge: {
-    backgroundColor: theme.colors.gray[9],
+    backgroundColor: theme.colors.gray[8],
     height: '20px',
     padding: '0 10px',
     borderRadius: theme.radius.xs,
