@@ -1,4 +1,4 @@
-import { Drawer, Stack, createStyles } from '@mantine/core';
+import { Drawer, ScrollArea, Stack, createStyles } from '@mantine/core';
 import { useVisibility } from '../store/visibility';
 import Row from './Row';
 import Footer from './footer';
@@ -16,28 +16,37 @@ const Scoreboard: React.FC = () => {
   const [visible, setVisible] = useVisibility((state) => [state.visible, state.setVisible]);
 
   return (
-    <Drawer
-      classNames={{ title: classes.title }}
+    <Drawer.Root
       opened={visible}
       onClose={() => setVisible(false)}
-      withCloseButton={false}
+      scrollAreaComponent={(props) => <ScrollArea.Autosize {...props} scrollbarSize={6} />}
       size="xs"
       position="right"
       padding="sm"
-      title="Server Name"
     >
-      <Stack align="center">
-        <Stack spacing={5}>
-          <Row />
-          <Row />
-          <Row />
-          <Row />
-          <Row />
-        </Stack>
+      <Drawer.Overlay />
+      <Drawer.Content>
+        <Drawer.Header>
+          <Drawer.Title className={classes.title}>Server Name</Drawer.Title>
+        </Drawer.Header>
+
+        <Drawer.Body>
+          <Stack spacing={5}>
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+          </Stack>
+        </Drawer.Body>
 
         <Footer />
-      </Stack>
-    </Drawer>
+      </Drawer.Content>
+    </Drawer.Root>
   );
 };
 

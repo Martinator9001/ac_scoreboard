@@ -1,6 +1,17 @@
-import { CopyButton, Group } from '@mantine/core';
+import { CopyButton, Group, createStyles } from '@mantine/core';
 import { FaUserAlt, FaUserFriends } from 'react-icons/fa';
 import Indicator from './Indicator';
+
+const useStyles = createStyles((theme) => ({
+  container: {
+    backgroundColor: 'red',
+    justifyContent: 'center',
+    position: 'sticky',
+    bottom: 0,
+    zIndex: 1000,
+    padding: theme.spacing.xs,
+  },
+}));
 
 const temp: any = {
   playerCount: 36,
@@ -15,8 +26,10 @@ const temp: any = {
 };
 
 const Footer: React.FC = () => {
+  const { classes } = useStyles();
+
   return (
-    <Group spacing="xs">
+    <Group spacing="xs" className={classes.container}>
       <Indicator
         label={temp.locales.playerCount}
         icon={FaUserFriends}
