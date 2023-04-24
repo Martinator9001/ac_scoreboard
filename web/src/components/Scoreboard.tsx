@@ -1,7 +1,7 @@
 import { Drawer, Stack, Title } from '@mantine/core';
 import { useVisibility } from '../store/visibility';
 import Row from './Row';
-import Footer from './Footer';
+import Footer from './footer';
 
 const Scoreboard: React.FC = () => {
   const [visible, setVisible] = useVisibility((state) => [state.visible, state.setVisible]);
